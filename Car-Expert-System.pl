@@ -5,3 +5,8 @@
 :- dynamic(asserted_sym/1). % asserted_sym(SymptomAtom)
 :- discontiguous(sympton_question/2).
 :- discontiguous(diagnosis/3).
+% Utility helpers
+
+reset_kb:-
+    retractall(known(_, _)),
+    retractall(asserted_sym(_)).
