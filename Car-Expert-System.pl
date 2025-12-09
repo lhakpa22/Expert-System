@@ -15,3 +15,10 @@ ask(QuestionAtom, Prompt) :-
     ( known(QuestionAtom, Answer) ->
         Answer = yes  % succeed only if recorded as yes
     ;
+      format('~w (yes/no): ', [Prompt]),
+        read(UserResponse),
+        (UserResponse = yes ; UserResponse = y) ->
+            asserta(known(QuestionAtom, yes)),
+            asserta(asserted_sym(QuestionAtom));
+        asserta(known(QuestionAtom, no)), fail
+    ).
