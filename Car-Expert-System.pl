@@ -69,3 +69,10 @@ symptom_question(engine_does_not_crank, 'Does the engine NOT crank when you try 
 symptom_question(engine_cranks_slowly, 'Does the engine crank slowly (slow cranking) when starting?').
 symptom_question(lights_dim_when_starting, 'Are the headlights/lights dim when you try to start the car?').
 symptom_question(lights_bright_when_starting, 'Are the headlights bright when you try to start the car (i.e., power seems available)?').
+symptom_question(clicking_when_trying_start, 'Do you hear a clicking noise when trying to start the engine?').
+symptom_question(engine_cranks_but_wont_start, 'Does the engine crank but NOT start?').
+symptom_question(strong_fuel_smell, 'Do you notice a strong smell of petrol/gasoline?').
+symptom_question(check_engine_light_on, 'Is the "check engine" light illuminated on the dashboard?').
+symptom_question(car_dies_while_driving, 'Does the car suddenly die or stall while driving?').
+symptom_question(battery_warning_light_on, 'Is the battery/alternator warning light illuminated?').
+symptom_question(overheating, 'Is the engine temperature rising and the car overheating?').
