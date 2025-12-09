@@ -10,3 +10,8 @@
 reset_kb:-
     retractall(known(_, _)),
     retractall(asserted_sym(_)).
+    
+ask(QuestionAtom, Prompt) :-
+    ( known(QuestionAtom, Answer) ->
+        Answer = yes  % succeed only if recorded as yes
+    ;
