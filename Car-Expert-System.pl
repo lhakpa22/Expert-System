@@ -22,3 +22,11 @@ ask(QuestionAtom, Prompt) :-
             asserta(asserted_sym(QuestionAtom));
         asserta(known(QuestionAtom, no)), fail
     ).
+% ask_if/1: ask the question and return true if user answered yes
+ask_if(QuestionAtom) :-
+    symptom_question(QuestionAtom, Prompt),
+    ask(QuestionAtom, Prompt).
+    
+% assert_sym_for_test/1: programmatically assert symptoms for tests
+assert_sym_for_test(Symptom) :-
+    ( asserted_sym(Symptom) -> true ; asserta(asserted_sym(Symptom)) ).
