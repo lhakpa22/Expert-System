@@ -26,7 +26,20 @@ ask(QuestionAtom, Prompt) :-
 ask_if(QuestionAtom) :-
     symptom_question(QuestionAtom, Prompt),
     ask(QuestionAtom, Prompt).
-    
+
 % assert_sym_for_test/1: programmatically assert symptoms for tests
 assert_sym_for_test(Symptom) :-
     ( asserted_sym(Symptom) -> true ; asserta(asserted_sym(Symptom)) ).
+
+% check_sym/1: succeed if symptom is asserted (user said yes or test asserted)
+check_sym(Symptom) :-
+    asserted_sym(Symptom).
+
+% match_count(List, Count, Matched) -> Count is number matched, Matched is list of matched symptoms
+match_count([], 0, []).
+match_count([H|T], N, [H|M]) :-
+    check_sym(H), !,
+    match_count(T, N1, M),
+    N is N1 + 1.
+match_count([_H|T], N, M) :-
+    match_count(T, N, M). 
