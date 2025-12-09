@@ -76,3 +76,19 @@ symptom_question(check_engine_light_on, 'Is the "check engine" light illuminated
 symptom_question(car_dies_while_driving, 'Does the car suddenly die or stall while driving?').
 symptom_question(battery_warning_light_on, 'Is the battery/alternator warning light illuminated?').
 symptom_question(overheating, 'Is the engine temperature rising and the car overheating?').
+symptom_question(coolant_low, 'Is the coolant level low or do you see coolant leaking?').
+symptom_question(radiator_smoke_or_steam, 'Do you see steam or smoke from the radiator/engine bay?').
+symptom_question(steering_hard, 'Is steering suddenly hard or heavy to turn?').
+symptom_question(vibration_or_bumps, 'Do you feel vibration or bumps while driving (wheel vibration)?').
+symptom_question(soft_brake_pedal, 'Is the brake pedal soft/spongy when you press it?').
+symptom_question(no_lights_at_all, 'Do you have absolutely no lights (no dash lights, no headlights)?').
+symptom_question(burnt_smell_electrical, 'Do you smell burning or see smoke inside the car (electrical smell)?').
+symptom_question(starts_then_stalls, 'Does the engine start and then immediately stall?').
+symptom_question(weak_battery_voltage, 'Have you measured battery voltage and found it below ~12V?').
+symptom_question(car_sits_long_and_wont_start, 'Has the car been sitting unused a long time and now won''t start?').
+symptom_question(parasitic_drain, 'Does the battery repeatedly go flat after being charged or replaced?').
+symptom_question(intermittent_electrical_failures, 'Are electrical accessories (radio, windows, lights) failing intermittently?').
+symptom_question(sudden_loss_power_acceleration, 'Do you experience sudden loss of power when accelerating?').
+symptom_question(brake_noise, 'Do the brakes make grinding or squealing noises?').
+% thermostat_stuck was referenced in a diagnosis; define the question
+symptom_question(thermostat_stuck, 'Does the temperature rise quickly after starting, indicating thermostat may be stuck?').
