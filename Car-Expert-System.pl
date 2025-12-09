@@ -43,3 +43,23 @@ match_count([H|T], N, [H|M]) :-
     N is N1 + 1.
 match_count([_H|T], N, M) :-
     match_count(T, N, M). 
+
+% symptom_weighted_match(Rules, SumWeightsMatched, SumWeightsTotal, MatchedList)
+% Rules is list of symptom-weight pairs [symptom:W, ...]
+symptom_weighted_match([], 0, 0, []).
+symptom_weighted_match([S:W | T], MatchedW, TotalW, MatchedList) :-
+    symptom_weighted_match(T, MatchedW1, TotalW1, MatchedList1),
+    TotalW is TotalW1 + W,
+    ( check_sym(S) ->
+        MatchedW is MatchedW1 + W,
+        MatchedList = [S | MatchedList1]
+    ;
+        MatchedW = MatchedW1,
+        MatchedList = MatchedList1
+    ).
+
+% confidence_percent(MatchedW, TotalW, Percent)
+confidence_percent(_, 0, 0) :- !.
+confidence_percent(M, T, P) :-
+    P is round((M * 100) / T).
+
