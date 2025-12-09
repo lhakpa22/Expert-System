@@ -62,4 +62,10 @@ symptom_weighted_match([S:W | T], MatchedW, TotalW, MatchedList) :-
 confidence_percent(_, 0, 0) :- !.
 confidence_percent(M, T, P) :-
     P is round((M * 100) / T).
+% Symptom questions (atoms and user readable prompts)
+% We'll define the symptom atom name and the prompt to ask the user.
 
+symptom_question(engine_does_not_crank, 'Does the engine NOT crank when you try to start?').
+symptom_question(engine_cranks_slowly, 'Does the engine crank slowly (slow cranking) when starting?').
+symptom_question(lights_dim_when_starting, 'Are the headlights/lights dim when you try to start the car?').
+symptom_question(lights_bright_when_starting, 'Are the headlights bright when you try to start the car (i.e., power seems available)?').
