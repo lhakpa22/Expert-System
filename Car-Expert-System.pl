@@ -141,3 +141,9 @@ diagnosis(coolant_leak_thermostat, [
     radiator_smoke_or_steam:4,
     thermostat_stuck:2
 ], 'Coolant leak or thermostat stuck closed; inspect coolant level, hoses, thermostat and radiator.').
+
+diagnosis(flat_tyre, [
+    steering_hard:3,
+    vibration_or_bumps:2,
+    sudden_loss_power_acceleration:1
+], 'Low tyre pressure or puncture; check tyres and pressure.').
