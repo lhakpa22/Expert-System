@@ -127,3 +127,10 @@ diagnosis(ignition_spark_failure, [
     starts_then_stalls:3,
     car_sits_long_and_wont_start:1
 ], 'Ignition problem (spark plugs, coils); check spark and ignition components.').
+
+diagnosis(fuel_delivery_problem, [
+    engine_cranks_but_wont_start:3,
+    strong_fuel_smell:3,
+    starts_then_stalls:3,
+    sudden_loss_power_acceleration:3
+], 'Fuel delivery issue (fuel pump/filter/clogged lines); smells of fuel or failing under load indicate fuel system checks.').
