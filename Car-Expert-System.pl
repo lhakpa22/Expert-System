@@ -96,3 +96,12 @@ symptom_question(thermostat_stuck, 'Does the temperature rise quickly after star
 % Diagnosis rules
 % Each diagnosis is: diagnosis(Key, [Symptom:Weight, ...], Description)
 % Weight indicates importance of the symptom for that diagnosis.
+
+diagnosis(battery_flat, [
+    engine_does_not_crank:4,
+    lights_dim_when_starting:3,
+    engine_cranks_slowly:3,
+    no_lights_at_all:4,
+    weak_battery_voltage:5,
+    parasitic_drain:2
+], 'Battery flat or highly discharged; check battery and terminals; try jump-start or replace battery.').
