@@ -105,3 +105,10 @@ diagnosis(battery_flat, [
     weak_battery_voltage:5,
     parasitic_drain:2
 ], 'Battery flat or highly discharged; check battery and terminals; try jump-start or replace battery.').
+
+diagnosis(starter_motor_fault, [
+    engine_does_not_crank:4,
+    lights_bright_when_starting:2,
+    clicking_when_trying_start:4,
+    engine_cranks_slowly:1
+], 'Starter motor or starter solenoid fault; clicking noise with bright lights suggests starter engagement issue.').
