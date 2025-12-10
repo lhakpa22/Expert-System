@@ -112,3 +112,11 @@ diagnosis(starter_motor_fault, [
     clicking_when_trying_start:4,
     engine_cranks_slowly:1
 ], 'Starter motor or starter solenoid fault; clicking noise with bright lights suggests starter engagement issue.').
+
+diagnosis(alternator_fault, [
+    car_dies_while_driving:4,
+    battery_warning_light_on:4,
+    lights_dim_when_starting:2,
+    intermittent_electrical_failures:3,
+    weak_battery_voltage:3
+], 'Alternator failing; battery not charging while engine runs; requires alternator test/inspection.').
