@@ -182,3 +182,14 @@ all_diagnoses(Ds) :-
         confidence_percent(MatchedW, TotalW, Percent),
         Result = diagnosis_result(Name, MatchedW, TotalW, Percent, MatchedList, Description)
     ), Results),
+    % Filter out diagnoses with 0 total weight (shouldn't happen) and sort by confidence desc
+    exclude(zero_total, Results, Filtered),
+    sort_by_confidence_desc(Filtered, Ranked).
+
+    zero_total(diagnosis_result(_, _, 0, _, _, _)) :- !.
+
+    % sorting helper: use keysort with negative confidence
+sort_by_confidence_desc(List, Sorted) :-
+    map_list_to_pairs(key_by_negative_confidence, List, Pairs),
+    keysort(Pairs, SortedPairs),
+    pairs_values(SortedPairs, Sorted).
