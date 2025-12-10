@@ -205,3 +205,15 @@ present_ranked(Ranked, N) :-
       writeln('--- Ranked diagnoses (top choices) ---'),
       present_list(Top)
     ).
+
+present_list([]).
+present_list([diagnosis_result(Name, _, _, Conf, Matched, Desc) | T]) :-
+    format('Diagnosis: ~w (~w%% confidence)~n', [Name, Conf]),
+    ( Matched = [] -> true ; format('  Matched symptoms: ~w~n', [Matched]) ),
+    format('  Suggestion: ~w~n~n', [Desc]),
+    present_list(T).
+
+take_first_n(_, 0, []) :- !.
+take_first_n([], _, []).
+take_first_n([H|T], N, [H|R]) :-
+    N1 is N - 1, take_first_n(T, N1, R).
