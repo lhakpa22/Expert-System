@@ -92,3 +92,7 @@ symptom_question(sudden_loss_power_acceleration, 'Do you experience sudden loss 
 symptom_question(brake_noise, 'Do the brakes make grinding or squealing noises?').
 % thermostat_stuck was referenced in a diagnosis; define the question
 symptom_question(thermostat_stuck, 'Does the temperature rise quickly after starting, indicating thermostat may be stuck?').
+
+% Diagnosis rules
+% Each diagnosis is: diagnosis(Key, [Symptom:Weight, ...], Description)
+% Weight indicates importance of the symptom for that diagnosis.
