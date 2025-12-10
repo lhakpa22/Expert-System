@@ -120,3 +120,10 @@ diagnosis(alternator_fault, [
     intermittent_electrical_failures:3,
     weak_battery_voltage:3
 ], 'Alternator failing; battery not charging while engine runs; requires alternator test/inspection.').
+
+diagnosis(ignition_spark_failure, [
+    engine_cranks_but_wont_start:4,
+    check_engine_light_on:3,
+    starts_then_stalls:3,
+    car_sits_long_and_wont_start:1
+], 'Ignition problem (spark plugs, coils); check spark and ignition components.').
