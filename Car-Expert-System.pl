@@ -158,3 +158,9 @@ diagnosis(electrical_short, [
     radiator_smoke_or_steam:2,
     no_lights_at_all:2
 ], 'Possible electrical short or serious wiring fault; stop and investigate urgently.').
+
+diagnosis(parasitic_battery_drain, [
+    parasitic_drain:5,
+    intermittent_electrical_failures:3,
+    no_lights_at_all:2
+], 'Parasitic drain on battery when car off; investigate trunk/aftermarket devices and wiring.').
