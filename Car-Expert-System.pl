@@ -193,3 +193,15 @@ sort_by_confidence_desc(List, Sorted) :-
     map_list_to_pairs(key_by_negative_confidence, List, Pairs),
     keysort(Pairs, SortedPairs),
     pairs_values(SortedPairs, Sorted).
+key_by_negative_confidence(diagnosis_result(Name, MW, TW, C, Matched, Desc), Key-diagnosis_result(Name, MW, TW, C, Matched, Desc)) :-
+    Key is -C.
+
+% Present top N diagnoses
+present_ranked([], _) :-
+    writeln('No diagnoses to present. Possibly no rules defined.'), !.
+present_ranked(Ranked, N) :-
+    ( Ranked = [] -> writeln('No matching diagnoses found.')
+    ; take_first_n(Ranked, N, Top),
+      writeln('--- Ranked diagnoses (top choices) ---'),
+      present_list(Top)
+    ).
