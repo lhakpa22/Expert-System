@@ -147,3 +147,8 @@ diagnosis(flat_tyre, [
     vibration_or_bumps:2,
     sudden_loss_power_acceleration:1
 ], 'Low tyre pressure or puncture; check tyres and pressure.').
+
+diagnosis(brake_issue, [
+    soft_brake_pedal:4,
+    brake_noise:3
+], 'Brake fluid low or worn pads/rotors; inspect brake system immediately.').
