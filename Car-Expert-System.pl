@@ -169,3 +169,16 @@ diagnosis(fuel_stale_or_immobilizer, [
     car_sits_long_and_wont_start:4,
     engine_cranks_but_wont_start:2
 ], 'Stale fuel or immobilizer/security lock issue for long-standing parked vehicles.').S
+
+% Core diagnosis engine
+all_diagnoses(Ds) :-
+    findall(Name, diagnosis(Name, _, _), Ds).
+
+    evaluate_all(Ranked) :-
+    % Ensure we have the list of possible diagnoses
+    findall(Result, (
+        diagnosis(Name, SymList, Description),
+        symptom_weighted_match(SymList, MatchedW, TotalW, MatchedList),
+        confidence_percent(MatchedW, TotalW, Percent),
+        Result = diagnosis_result(Name, MatchedW, TotalW, Percent, MatchedList, Description)
+    ), Results),
