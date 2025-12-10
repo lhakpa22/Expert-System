@@ -134,3 +134,10 @@ diagnosis(fuel_delivery_problem, [
     starts_then_stalls:3,
     sudden_loss_power_acceleration:3
 ], 'Fuel delivery issue (fuel pump/filter/clogged lines); smells of fuel or failing under load indicate fuel system checks.').
+
+diagnosis(coolant_leak_thermostat, [
+    overheating:4,
+    coolant_low:4,
+    radiator_smoke_or_steam:4,
+    thermostat_stuck:2
+], 'Coolant leak or thermostat stuck closed; inspect coolant level, hoses, thermostat and radiator.').
