@@ -152,3 +152,9 @@ diagnosis(brake_issue, [
     soft_brake_pedal:4,
     brake_noise:3
 ], 'Brake fluid low or worn pads/rotors; inspect brake system immediately.').
+
+diagnosis(electrical_short, [
+    burnt_smell_electrical:5,
+    radiator_smoke_or_steam:2,
+    no_lights_at_all:2
+], 'Possible electrical short or serious wiring fault; stop and investigate urgently.').
