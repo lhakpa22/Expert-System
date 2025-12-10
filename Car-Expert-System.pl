@@ -164,3 +164,8 @@ diagnosis(parasitic_battery_drain, [
     intermittent_electrical_failures:3,
     no_lights_at_all:2
 ], 'Parasitic drain on battery when car off; investigate trunk/aftermarket devices and wiring.').
+
+diagnosis(fuel_stale_or_immobilizer, [
+    car_sits_long_and_wont_start:4,
+    engine_cranks_but_wont_start:2
+], 'Stale fuel or immobilizer/security lock issue for long-standing parked vehicles.').S
