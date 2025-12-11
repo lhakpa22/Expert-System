@@ -217,3 +217,13 @@ take_first_n(_, 0, []) :- !.
 take_first_n([], _, []).
 take_first_n([H|T], N, [H|R]) :-
     N1 is N - 1, take_first_n(T, N1, R).
+% Interactive run
+% define the default questionnaire order (to ask in interactive mode)
+questionnaire_order([
+    engine_does_not_crank,
+    engine_cranks_slowly,
+    lights_dim_when_starting,
+    lights_bright_when_starting,
+    clicking_when_trying_start,
+    engine_cranks_but_wont_start,
+    strong_fuel_smell,
