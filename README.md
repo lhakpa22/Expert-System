@@ -45,14 +45,14 @@ https://www.swi-prolog.org/
 
 Clone this repository:
 
-git clone 
+git clone https://github.com/lhakpa22/Expert-System.git
 
 
 Open SWI-Prolog and consult the file:
 
 ?- consult('Car-Expert-System.pl').
 
-Running the Expert System
+Running the Expert System:
 
 Use the following command:
 
@@ -61,7 +61,7 @@ Use the following command:
 
 This starts the interactive questionnaire and produces the top 5 likely diagnoses.
 
-Running Automated Tests
+Running Automated Tests:
 
 The system includes several predefined test scenarios. Run them using:
 
@@ -77,7 +77,7 @@ README.md              → Project documentation
 
 Key components inside the Prolog file:
 
-Symptom questions
+Symptom questions:
 
 Diagnosis rules (with weighting)
 
