@@ -298,3 +298,9 @@ test_case(5, 'Overheating coolant leak', [
     coolant_low,
     radiator_smoke_or_steam
 ]).
+
+test_case(6, 'Brake issue', [
+    soft_brake_pedal,
+    brake_noise
+]).
+
