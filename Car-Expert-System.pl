@@ -287,3 +287,14 @@ test_case(3, 'Alternator failing scenario', [
     intermittent_electrical_failures
 ]).
 
+test_case(4, 'Fuel delivery problem scenario', [
+    engine_cranks_but_wont_start,
+    strong_fuel_smell,
+    sudden_loss_power_acceleration
+]).
+
+test_case(5, 'Overheating coolant leak', [
+    overheating,
+    coolant_low,
+    radiator_smoke_or_steam
+]).
