@@ -247,3 +247,9 @@ questionnaire_order([
     brake_noise,
     thermostat_stuck
 ]).
+
+interactive_ask_all([]).
+interactive_ask_all([Q|Rest]) :-
+    ( ask_if(Q) -> true ; true ),    % ask_if succeeds only if yes; if no, continue
+    interactive_ask_all(Rest).
+
