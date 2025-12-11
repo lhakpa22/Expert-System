@@ -310,3 +310,9 @@ test_case(7, 'Ambiguous small evidence', [
     weak_battery_voltage
 ]).
 
+run_tests :-
+    reset_kb,
+    writeln('Running automated tests...'),
+    findall(Id, test_case(Id,_,_), Ids),
+    run_tests_list(Ids),
+    writeln('Automated tests complete.').
