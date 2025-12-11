@@ -5,6 +5,7 @@
 :- dynamic(asserted_sym/1). % asserted_sym(SymptomAtom)
 :- discontiguous(sympton_question/2).
 :- discontiguous(diagnosis/3).
+
 % Utility helpers
 
 reset_kb:-
@@ -15,13 +16,14 @@ ask(QuestionAtom, Prompt) :-
     ( known(QuestionAtom, Answer) ->
         Answer = yes  % succeed only if recorded as yes
     ;
-      format('~w (yes/no): ', [Prompt]),
+        format('~w (yes/no): ', [Prompt]),
         read(UserResponse),
         (UserResponse = yes ; UserResponse = y) ->
             asserta(known(QuestionAtom, yes)),
             asserta(asserted_sym(QuestionAtom));
         asserta(known(QuestionAtom, no)), fail
     ).
+
 % ask_if/1: ask the question and return true if user answered yes
 ask_if(QuestionAtom) :-
     symptom_question(QuestionAtom, Prompt),
@@ -62,6 +64,7 @@ symptom_weighted_match([S:W | T], MatchedW, TotalW, MatchedList) :-
 confidence_percent(_, 0, 0) :- !.
 confidence_percent(M, T, P) :-
     P is round((M * 100) / T).
+
 % Symptom questions (atoms and user readable prompts)
 % We'll define the symptom atom name and the prompt to ask the user.
 
