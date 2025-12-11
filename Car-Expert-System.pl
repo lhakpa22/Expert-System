@@ -252,4 +252,13 @@ interactive_ask_all([]).
 interactive_ask_all([Q|Rest]) :-
     ( ask_if(Q) -> true ; true ),    % ask_if succeeds only if yes; if no, continue
     interactive_ask_all(Rest).
+run :-
+    reset_kb,
+    writeln('--- Car Fault Diagnosis Expert System (Prolog) ---'),
+    writeln('Please answer the following questions; type yes. or no.'),
+    questionnaire_order(Qs),
+    interactive_ask_all(Qs),
+    evaluate_all(Ranked),
+    present_ranked(Ranked, 5),
+    writeln('Diagnosis complete. You can inspect which symptoms were asserted by calling show_asserted_symptoms.'), !.
 
