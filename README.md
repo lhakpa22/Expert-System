@@ -31,7 +31,7 @@ https://www.swi-prolog.org/
 
 Clone this repository:
 
-git clone 
+git clone https://github.com/lhakpa22/Expert-System.git
 
 Open SWI-Prolog and consult the file:
 ?- consult('Car-Expert-System.pl').
