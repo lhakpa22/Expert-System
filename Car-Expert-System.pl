@@ -275,3 +275,15 @@ test_case(1, 'Battery flat scenario', [
     engine_cranks_slowly
 ]).
 
+test_case(2, 'Starter fault scenario', [
+    engine_does_not_crank,
+    lights_bright_when_starting,
+    clicking_when_trying_start
+]).
+
+test_case(3, 'Alternator failing scenario', [
+    car_dies_while_driving,
+    battery_warning_light_on,
+    intermittent_electrical_failures
+]).
+
