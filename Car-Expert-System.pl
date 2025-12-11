@@ -262,3 +262,16 @@ run :-
     present_ranked(Ranked, 5),
     writeln('Diagnosis complete. You can inspect which symptoms were asserted by calling show_asserted_symptoms.'), !.
 
+% Helpers for user and testing
+
+show_asserted_symptoms :-
+    findall(S, asserted_sym(S), L),
+    format('Asserted symptoms: ~w~n', [L]).
+
+% Automated test runner: several predefined test cases
+test_case(1, 'Battery flat scenario', [
+    engine_does_not_crank,
+    lights_dim_when_starting,
+    engine_cranks_slowly
+]).
+
