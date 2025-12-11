@@ -240,3 +240,10 @@ questionnaire_order([
     burnt_smell_electrical,
     starts_then_stalls,
     weak_battery_voltage,
+    car_sits_long_and_wont_start,
+    parasitic_drain,
+    intermittent_electrical_failures,
+    sudden_loss_power_acceleration,
+    brake_noise,
+    thermostat_stuck
+]).
