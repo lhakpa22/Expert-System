@@ -316,3 +316,14 @@ run_tests :-
     findall(Id, test_case(Id,_,_), Ids),
     run_tests_list(Ids),
     writeln('Automated tests complete.').
+run_tests_list([]).
+run_tests_list([Id|T]) :-
+    test_case(Id, Title, Symptoms),
+    format('~n--- Test ~w: ~w ---~n', [Id, Title]),
+    reset_kb,
+    forall(member(S, Symptoms), assert_sym_for_test(S)),
+    show_asserted_symptoms,
+    evaluate_all(Ranked),
+    present_ranked(Ranked, 3),
+    run_tests_list(T).
+% End of file
