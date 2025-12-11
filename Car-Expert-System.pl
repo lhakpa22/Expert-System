@@ -304,3 +304,9 @@ test_case(6, 'Brake issue', [
     brake_noise
 ]).
 
+test_case(7, 'Ambiguous small evidence', [
+    lights_bright_when_starting,
+    clicking_when_trying_start,
+    weak_battery_voltage
+]).
+
